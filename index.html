@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/preset-icons/nullscape_2.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <title>Nullscape Name Maker</title>
+</head>
+<body>
+    <!-- Site main div -->
+    <div class="container">
+        <!-- Nullscape logo + lobby name maker -->
+        <div class="title">
+            <img src="assets/nlnm_logo.png" onclick='openPopup("credits")' alt="nullscape-logo" id="logo">
+        </div>
+        <!-- Maker + presets -->
+        <div id="borderGlow">
+            <div class="functionalPart">
+                <div class="maker">
+                    <form id="makerForm">
+                        <div id="nameandPreview">
+                            <h1>Name your lobby.</h1>
+                            <!-- Input for the lobby name -->
+                            <input type="text" id="lobbyname" value="Hello, World!" placeholder="Lobby name (ex: Voidbound Scarf Run)" maxlength="35" required><br>
+
+                            <!-- Preview -->
+                             <div>
+                                <p id="preview">(will display as <span onclick="easteregg()" id="finalLobbyname">...</span>) 
+                                    <span><button id="info-btn" onclick='openPopup("preview")'>?</button></span>
+                                </p>
+                             </div>
+                            <input type="submit" id="confirm" onclick="logfinaltext()" value="Confirm">
+                        </div>
+
+                        <hr>
+
+                        <!-- Text settings -->
+                        <h1>Text Settings</h1>
+                        <div id="textSettings">
+                            <!-- Color picker (text) -->
+                            <div id="formDiv">
+                                <label for="textColor">Text color:</label>
+                                <input type="color" value="#c0c0c0" name="textColor" id="textColor">
+                            </div>
+
+                            <!-- Transparency (text) -->
+                            <div id="formDiv">
+                                <label for="textTr">Text Transparency:</label>
+                                <input type="number" id="textTr" value="1" placeholder="0-1" step=".1" min="0" max="1">
+                                <button id="large-infobtn" onclick='openPopup("text-tr")'>Information</button>
+                            </div>
+
+                            <!-- Font face -->
+                            <div id="formDiv">
+                                
+                                <label for="fontFace">Font face:</label>
+                                <select id="fontFace">
+                                    <option value="Default">Nullscape Default</option>
+                                    <option value="AmaticSC" class="amaticsc">Amatic SC</option>
+                                    <option value="Antique" class="antique">Antique</option>
+                                    <option value="Arcade" class="arcade">Arcade</option>
+                                    <option value="Arial" class="arial">Arial</option>
+                                    <option value="Bangers" class="bangers">Bangers</option>
+                                    <option value="Cartoon" class="cartoon">Cartoon</option>
+                                    <option value="Code" class="code">Code</option>
+                                    <option value="Creepster" class="creepster">Creepster</option>
+                                    <option value="DenkOne" class="denkone">DenkOne</option>
+                                    <option value="Fantasy" class="fantasy">Fantasy</option>
+                                    <option value="Fondamento" class="fondamento">Fondamento</option>
+                                    <option value="FredokaOne" class="fredokaone">Fredoka One</option>
+                                    <option value="Garamond" class="garamond">Garamond</option>
+                                    <option value="Gotham" class="gotham">Gotham</option>
+                                    <option value="GothamBlack" class="gotham-black">Gotham Black</option>
+                                    <option value="GothamSemibold" class="gothamsemibold">Gotham Semibold</option>
+                                    <option value="GrenzeGotisch" class="grenzegotisch">Grenze Gotisch</option>
+                                    <option value="Highway" class="highway">Highway</option>
+                                    <option value="IndieFlower" class="indieflower">Indie Flower</option>
+                                    <option value="JosefinSans" class="josefinsans">Josefin Sans</option>
+                                    <option value="Jura" class="jura">Jura</option>
+                                    <option value="Legacy" class="legacy">Legacy</option>
+                                    <option value="Merriweather" class="merriweather">Merriweather</option>
+                                    <option value="Michroma" class="michroma">Michroma</option>
+                                    <option value="Nunito" class="nunito">Nunito</option>
+                                    <option value="Oswald" class="oswald">Oswald</option>
+                                    <option value="PatrickHand" class="patrickhand">Patrick Hand</option>
+                                    <option value="PermanentMarker" class="permanentmarker">Permanent Marker</option>
+                                    <option value="Roboto" class="roboto">Roboto</option>
+                                    <option value="RobotoCondensed" class="robotocondensed">Roboto Condensed</option>
+                                    <option value="RobotoMono" class="robotomono">Roboto Mono</option>
+                                    <option value="Sarpanch" class="sarpanch">Sarpanch</option>
+                                    <option value="SciFi" class="scifi">SciFi</option>
+                                    <option value="SourceSans" class="sourcesans">Source Sans</option>
+                                    <option value="SpecialElite" class="specialelite">Special Elite</option>
+                                    <option value="Ubuntu" class="ubuntu">Ubuntu</option>
+                                </select>
+                                <button id="large-infobtn" onclick='openPopup("font-face")'>Information</button>
+                            </div>
+
+                            <!-- Markdown -->
+                            <div id="formDiv">
+                                <ul id="markdown">
+                                    <li>
+                                        <input type="checkbox" name="boldCheckbox" id="boldCheckbox">
+                                        <label for="boldCheckbox"><b>Bold</b></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="italicCheckbox" id="italicCheckbox">
+                                        <label for="italicCheckbox"><i>Italic</i></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="underlCheckbox" id="underlCheckbox">
+                                        <label for="underlCheckbox"><u>Underline</u></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="strikeCheckbox" id="strikeCheckbox">
+                                        <label for="strikeCheckbox"><s>Strikethrough</s></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Stroke -->
+                            <div id="formDiv">
+                                <label for="strokeColor">Stroke color:</label>
+                                <input type="color" name="strokeColor" id="strokeColor">
+                            </div>
+                                        
+                            <!-- Transparency (stroke) -->
+                            <div id="formDiv">
+                                <label for="strokeTr">Stroke alpha value:</label>
+                                <input type="number" id="strokeTr" value="0" placeholder="0-1" step=".1" min="0" max="1">
+                                <button id="large-infobtn" onclick='openPopup("stroke-tr")'>Information</button>
+                            </div>
+                        </div>
+                        <div class="copyPaste">
+                            <p><strong>Copy and paste on Nullscape:</strong></p>
+                            <i><p id="result"></p></i>
+                        </div>
+                    </form>
+                </div>
+                <div class="presets">
+                    <!-- Sticky header -->
+                    <div class="presetsHeader">
+                        <h1>Presets</h1><button id="info-btn" onclick='openPopup("presets")'>?</button>
+                    </div>
+                    <!-- Each one of the presets -->
+                        <div class="presetDiv" onclick="loadPreset('reset')">
+                            <img src="assets/preset-icons/reset.png" alt="" class="presetIcon">
+                            <p class="presetName" style="top: 40%;">Reset</p>
+                            
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('nullscape')">
+                            <img src="assets/preset-icons/nullscape_2.png" alt="" class="presetIcon">
+                            <p class="presetName">Nullscape
+                                <span style="color:#ffffff99; font-size: 11pt; font-style: italic;" class="default"><br>Nullscape Default</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('mart')">
+                            <img src="assets/preset-icons/mart.png" alt="" class="presetIcon">
+                            <p class="presetName">Mart
+                                <span style="color:#ffffff99; font-size: 11pt; font-style: italic;" class="fredokaone"><br>Fredoka One</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('husk')">
+                            <img src="assets/preset-icons/husk.png" alt="" class="presetIcon">
+                            <p class="presetName">Husk
+                                <span style="color:#ffffff99; font-size: 11pt; font-style: italic;" class="specialelite"><br>Special Elite</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('flesh')">
+                            <img src="assets/preset-icons/flesh.png" alt="" class="presetIcon">
+                            <p class="presetName">Flesh
+                                <span style="color:#ffffff99; font-size: 11pt; font-style: italic;" class="indieflower"><br>Indie Flower</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('telefragger')">
+                            <img src="assets/preset-icons/telefragger.png" alt="" class="presetIcon">
+                            <p class="presetName">Telefragger
+                                <span style="color:#ffffff99; font-size: 9pt; font-style: italic;" class="permanentmarker"><br>Permanent Marker</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('guardian')">
+                            <img src="assets/preset-icons/guardian.png" alt="" class="presetIcon">
+                            <p class="presetName">Guardian
+                                <span style="color:#ffffff99; font-size: 11pt; font-style: italic;" class="grenzegotisch"><br>Grenze Gotisch</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('voidbreaker')">
+                            <img src="assets/preset-icons/voidbreaker.png" alt="" class="presetIcon">
+                            <p class="presetName">Voidbreaker
+                                <span style="color:#ffffff99; font-size: 11pt; font-style: italic;" class="sarpanch"><br>Sarpanch</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('cadence')">
+                            <img src="assets/preset-icons/cadence.png" alt="" class="presetIcon">
+                            <p class="presetName">Cadence
+                                <span style="color:#ffffff99; font-size: 10pt; font-style: italic;" class="merriweather"><br>Merriweather</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('voidbound')">
+                            <img src="assets/preset-icons/voidbound.png" alt="" class="presetIcon">
+                            <p class="presetName">Voidbound
+                                <span style="color:#ffffff99; font-size: 11pt; font-style: italic;" class="antique"><br>Antique</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('subspace')">
+                            <img src="assets/preset-icons/subspace.png" alt="" class="presetIcon">
+                            <p class="presetName">Subspace
+                                <span style="color:#ffffff99; font-size: 10pt; font-style: italic;" class="scifi"><br>SciFi</span>
+                            </p>
+                        </div>
+                        <div class="presetDiv" onclick="loadPreset('blossom')">
+                            <img src="assets/preset-icons/blossom.png" alt="" class="presetIcon">
+                            <p class="presetName">Blossom
+                                <span style="color:#ffffff99; font-size: 9pt; font-style: italic;" class="michroma"><br>Michroma</span>
+                            </p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    <img src="https://static.wikitide.net/nullscapewiki/thumb/1/1c/MartSlideAnimation.gif/120px-MartSlideAnimation.gif" alt="mart:D" id="mart">
+    </div>
+
+    <!-- Pop up -->
+    <div id="popup-bg" class="hide-popup">
+        <div id="popup">
+            <div id="popup-header">
+                <h2 class="popup-title">Placeholder</h2>
+                <input type="button" value="Close" id="popup-closebtn" onclick="closePopup()">
+            </div>
+            <hr class="popup-separator">
+            <div id="popup-body">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex quidem libero dolor est nobis nisi illo deserunt, accusantium beatae ipsam? Saepe id explicabo eaque suscipit? Libero rem dicta enim placeat?
+            </div>
+        </div>
+    </div>
+    
+    <!-- Code -->
+    <script src="script.js"></script>
+    <!-- Mart :D -->
+    <script>
+        const mart = document.getElementById("mart")
+        mouseX = 0, mouseY = 0
+        currentX = 0, currentY = 0
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.pageX
+            mouseY = e.pageY
+        })
+        function animate(){
+            currentX += (mouseX - currentX) * 0.01
+            currentY += (mouseY - currentY) * 0.01
+
+            mart.style.left = currentX + "px"
+            mart.style.top = currentY + "px"
+
+            requestAnimationFrame(animate)
+        }
+        animate()
+    </script>
+</body>
+</html>

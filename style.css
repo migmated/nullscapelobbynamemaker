@@ -1,0 +1,536 @@
+/* Settings */
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{
+    overflow-x: hidden;
+    background: url(assets/page-bg.png);
+    background-color: rgba(28, 6, 81, 0.7);
+    background-blend-mode: multiply;
+    background-size:auto;
+    background-position: center;
+    height: 100%;
+}
+
+.default{
+    font-family: "Libertinus Serif Display", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container{
+    background-color: rgba(35, 4, 72, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 65%;
+    min-width: 970px;
+    min-height: 100%;
+}
+
+/* Site */
+#logo {
+    width: 500px;
+    border: none;
+    transition: .1s ease-in-out;
+} #logo:hover{
+    transform: scale(1.05);
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#borderGlow{
+    margin-bottom: 5px;
+    border: #ccf4ff 3px solid;
+    box-shadow: 0px 0px 9px 5px #72caedb4;
+    border-radius: 20px;
+
+    max-width: 900px;
+    align-self: center;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+
+.functionalPart{
+    background-image: linear-gradient(
+        to bottom, 
+        rgb(80, 53, 96), 
+        rgb(31, 6, 62));
+    border-radius: 15px;
+    width: auto;
+    
+    height: 600px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    gap: 15px;
+
+    padding: 15px;
+}
+
+/* Maker */
+.maker{
+    background-image: linear-gradient(
+        to bottom, 
+        rgb(83, 39, 110), 
+        rgba(32, 13, 56, 0.4));
+    border: rgb(62, 0, 128) 3px solid;
+    border-radius: 10px;
+
+    font-family: "Libertinus Serif Display", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+
+    padding: 10px;
+    width: 70%;
+    min-width: 474.2px;
+    height: 95%;
+}
+
+#nameandPreview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#preview{
+    color: #c0c0c0;
+    font-size: 14pt;
+    margin-bottom: 10px;
+}
+
+#textSettings{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+
+    gap: 15px;
+    align-items: center;
+}
+
+#formDiv{
+    display: flex;
+    flex-direction: column;
+
+    width: auto;
+    max-width: 30%;
+    height: 65px;
+    background-color: rgb(134, 110, 159);
+    border: #906395 3px solid;
+    box-shadow: 0px 0px 10px 1px #a66dc3c4;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.copyPaste{
+    background-color: rgb(45, 131, 65);
+    border: #2ba461 3px solid;
+    box-shadow: 0px 0px 10px 1px #77d77dc4;
+    border-radius: 8px;
+
+    margin-top: 20px;
+    padding: 5px;
+}
+
+/* Presets */
+.presets{
+    background-image: linear-gradient(
+        to bottom, 
+        rgb(83, 39, 110), 
+        rgba(32, 13, 56, 0.4));
+    border: rgb(62, 0, 128) 3px solid;
+    border-radius: 10px;
+
+    padding: 10px;
+
+    font-family: "Libertinus Serif Display", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+
+    width: 30%;
+    min-width: 250px;
+    max-width: 400px;
+
+    height: 95%;
+}
+
+.presetsHeader{
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    top: -10px;
+
+    background-color: rgb(83, 39, 110);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 3;
+    width: 270px;
+    
+}
+
+.presetDiv{
+    background-image: linear-gradient(
+        to bottom, 
+        rgb(83, 39, 110), 
+        rgba(48, 18, 84, 0.4));
+    border: rgb(62, 0, 128) 3px solid;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-shrink: 0;
+
+    height: 70px;
+    width: 100%;
+    max-width: 245px;
+    overflow: hidden;
+
+    transition: .2s ease-in-out;
+} .presetDiv:hover{
+    transform: scale(1.05);
+} .presetDiv:hover .presetIcon{
+    transform: 
+        rotate(15deg)
+        translateY(7px)
+        scale(1.07);
+    opacity: 1;
+}
+
+.presetIcon{
+    position: relative;
+    border: none;
+    border-radius: 0;
+    width: 80px;
+    height: 80px;
+    transform: 
+        rotate(15deg)
+        translateX(-10px)
+        translateY(12px);
+    opacity: 0.7;
+    transition: .2s ease-in-out;
+}
+
+.presetName{
+    position: relative;
+    top: 30%;
+    left: 15px;
+    
+}
+
+/* Popup */
+#popup-bg{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Libertinus Serif Display", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#popup{
+    position: absolute;
+    width: 800px;
+    height: auto;
+    max-height: 450px;
+    color:white;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    background-image: linear-gradient(
+        to bottom, 
+        rgb(83, 39, 110), 
+        rgba(48, 18, 84, 0.9));
+    border: rgb(62, 0, 128) 3px solid;
+    border-radius: 15px;
+}
+
+#popup-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#popup-body{
+    margin-bottom: 30px;
+    font-size: 13pt;
+}
+
+#popup-closebtn{
+    padding: 13px;
+    width: 80px;
+    height: 50px;
+
+    align-self: center;
+
+    font-family: "Libertinus Serif Display", system-ui;
+    font-size: 12pt;
+    border: #db2f2f 2px solid;
+    border-radius: 8px;
+    background-color: #a72a2a;
+    color: #e0e0e0;
+    
+    transition: .2s ease-in-out;
+} #popup-closebtn:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 0px 7px 2px #b04040b8;
+}
+
+.popup-title{
+    font-size: 35pt;
+}
+
+.popup-separator{
+    border: 1px solid #ffffff;
+}
+
+.hide-popup{
+    opacity: 0;
+    pointer-events: none;
+    transition: .1s ease-in-out;
+}
+
+.show-popup{
+    opacity: 1;
+    pointer-events: all;
+    transition: .1s ease-in-out;
+}
+
+/* Popup elements */
+#popup-image{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+
+    color:rgba(255, 255, 255, 0.7);
+    font-style: italic;
+
+    max-width: 450px;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#img-table{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+img{
+    border-radius: 15px;
+    border: rgba(255,255,255, 0.7) 2px solid;
+}
+
+#info-btn{
+    position: relative;
+
+    background-color: rgb(55, 22, 95);
+    border: rgb(31, 4, 61) 3px solid;
+    border-radius: 30px;
+    color: white;
+
+    font-family: "Libertinus Serif Display", system-ui;
+    font-weight: 700;
+    font-size: 12pt;
+
+    top: -1px;
+    width: 25px;
+    height: 25px;
+
+    transition: .2s ease-in-out;
+}#info-btn:hover{
+    transform: scale(1.1);
+}
+
+#large-infobtn{
+    position: relative;
+
+    background-color: rgb(55, 22, 95);
+    border: rgb(31, 4, 61) 3px solid;
+    border-radius: 5px;
+    color: white;
+
+    font-family: "Libertinus Serif Display", system-ui;
+    font-weight: 500;
+    font-size: 10pt;
+
+    margin-top: 5px;
+
+    width: auto;
+    height: 25px;
+
+    transition: .2s ease-in-out;
+}#large-infobtn:hover{
+    transform: scale(1.05);
+}
+
+#credits-sect{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 15px;
+    gap: 15px
+} #credits-p{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+/* Inputs */
+    input#lobbyname{
+        width: 65%;
+        height: 5px;
+        padding: 15px;
+        border: rgb(51, 5, 100) 3px solid;
+        border-radius: 10px;
+
+        font-family: "Libertinus Serif Display", system-ui;
+        font-size: 12pt;
+
+        margin-top: 10px;
+        margin-bottom: -10px;
+
+        background-color: rgb(70, 33, 115);
+        color: #e0e0e0;
+        
+    }
+
+    input#confirm{
+        padding: 13px;
+        width: auto;
+        max-width: 80px;
+
+        font-family: "Libertinus Serif Display", system-ui;
+        border: #2f6edb 2px solid;
+        border-radius: 8px;
+        background-color: #2a58a7;
+        color: #e0e0e0;
+        
+        transition: .2s ease-in-out;
+
+    } input#confirm:hover{
+        transform: scale(1.03);
+        box-shadow: 0px 0px 7px 2px #4076b0b8;
+    }
+    input[type="checkbox"]{
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        background-color: rgb(70, 33, 115);
+        border: 2px solid rgb(51, 5, 100);
+        border-radius: 3px;
+        cursor: pointer;
+    } input[type="checkbox"]:checked{
+        background-color: #65d068; /* cor quando marcado */
+        border-color: #4caf50;
+    }
+
+    input#textColor, input#strokeColor{
+        border: rgb(51, 5, 100) 3px solid;
+        border-radius: 3px;
+        background-color: rgb(70, 33, 115);
+
+        width: 100%;
+        height: 100%;
+    }
+
+    input#textTr, input#strokeTr{
+        border: rgb(51, 5, 100) 3px solid;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-radius: 3px;
+        background-color: rgb(70, 33, 115);
+        color: white;
+    }
+
+    select {
+        border: rgb(51, 5, 100) 3px solid;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-radius: 3px;
+        background-color: rgb(70, 33, 115);
+        color: white;
+    }
+
+    option{
+        background-color: rgba(0, 18, 92, 0.44);
+    }
+
+    hr{
+        border: rgb(132, 132, 132) 1px solid;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    ul#markdown{
+        margin-top: -5px;
+        list-style-type: none;
+    }
+
+    video{
+        border-radius: 15px;
+    }
+
+/* mart :D */
+#mart{
+    position: absolute;
+    opacity: .8;
+    width: 80px;
+    pointer-events: none;
+    z-index: 100;
+    border: none;
+    transform: translate(-50%, -50%)
+}
