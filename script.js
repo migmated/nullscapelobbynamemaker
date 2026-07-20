@@ -304,7 +304,7 @@ function openPopup(type){
 
     } else if(type == "presets"){
         popupTitle.innerText = "About the Presets"
-        popupBody.innerHTML = '<p>Presets change both the lobby name and all text settings. The line of text displayed right below the preset name shows the font face that we (Migmated & Or3o) believe best matches the preset. So if you’re running out of ideas, just try out some presets and see what works!</p>'
+        popupBody.innerHTML = '<p>Presets change both the lobby name and all text settings (except for the Font Face). The line of text displayed right below the preset name shows the font face that we (Migmated & Or3o) believe best matches the preset. So if you’re running out of ideas, just try out some presets and see what works!</p>'
 
     } else if(type == "text-tr"){
         popupTitle.innerText = "Text Transparency"
